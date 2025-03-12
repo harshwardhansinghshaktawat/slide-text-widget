@@ -23,13 +23,13 @@ class SlideText extends HTMLElement {
 
   render() {
     // Get attribute values with fallbacks
-    const text = this.getAttribute('text') || 'Animation';
-    const backgroundColor = this.getAttribute('background-color') || '#F5F5F5'; // Light gray
-    const textColor = this.getAttribute('text-color') || '#333'; // Dark gray
-    const animationDirection = this.getAttribute('animation-direction') || 'left'; // 'left' or 'right'
+    const text = this.getAttribute('text') || 'Elegant';
+    const backgroundColor = this.getAttribute('background-color') || '#2C2F33'; // Deep charcoal gray
+    const textColor = this.getAttribute('text-color') || '#F8EDE3'; // Creamy off-white
+    const animationDirection = this.getAttribute('animation-direction') || 'left';
     const textAlignment = this.getAttribute('text-alignment') || 'center';
     const animationDuration = this.getAttribute('animation-duration') || '1.5'; // In seconds
-    const fontFamily = this.getAttribute('font-family') || 'Helvetica'; // Matches original
+    const fontFamily = this.getAttribute('font-family') || 'Playfair Display'; // Elegant serif
     const fontSize = this.getAttribute('font-size') || '5'; // In vw
 
     // Spanize the text (skip spaces)
@@ -58,7 +58,7 @@ class SlideText extends HTMLElement {
 
         .slide-container {
           text-align: ${textAlignment};
-          font-family: ${fontFamily}, Arial, sans-serif;
+          font-family: ${fontFamily}, serif; /* Serif fallback for elegance */
           font-size: ${fontSize}vw;
           color: ${textColor};
           text-transform: uppercase;
@@ -98,7 +98,7 @@ class SlideText extends HTMLElement {
     // Apply animation delays to letters
     const letters = this.shadowRoot.querySelectorAll('.letter');
     letters.forEach((letter, i) => {
-      letter.style.animationDelay = `${i * 0.1}s`; // 0.1s delay per letter
+      letter.style.animationDelay = `${i * 0.1}s`;
     });
   }
 }
