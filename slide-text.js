@@ -97,12 +97,16 @@ class SlideText extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         :host {
-          display: block;
           width: 100%;
+          display: block;
           background: ${backgroundColor};
           overflow: hidden;
         }
         .slide-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100px;
           text-align: ${textAlignment};
           font-family: ${fontFamily}, serif; /* Serif fallback for elegance */
           font-size: ${fontSize}vw;
